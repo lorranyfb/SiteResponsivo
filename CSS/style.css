@@ -12,7 +12,7 @@
  }
  :root{
    --rosa: #fc8edd;
-    --amarelo: #ffffa8;
+    --amarelo: #1079aa;
     --azul: #8e9dfc;
     --color-p: #ffffff;
     --color-p2: #060606;
@@ -45,7 +45,7 @@
    font-size: 15px;
  }
  .ul li a{
-   color: #000000;
+   color: white;
  }
  main .container{
    display: flex;
@@ -55,7 +55,7 @@
  }
  .main-text{
    width: 50%;
-   color: #000000;
+   color: white;
  }
  .main-text h1 {
    font-size: 4.5rem;
@@ -70,4 +70,45 @@
  }
  .main-img img{
    width: 100%;
+ }
+ .menu-icon{
+  display: none;
+  position: relative;
+  z-index: 10;
+ }
+
+ /*Responsivo*/
+ @media (max-width: 960px){
+    .menu-icon{
+      display: block;
+    }
+    .ul{
+      position: fixed;
+      background: var(--amarelo);
+      top: 0;
+      width: 100%;
+      height: 100%;
+      left: 100%;
+      transition: 0.3s;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .ul li{
+      font-size: 20px;
+      margin: 20px 0;
+    }
+    .ul.ativo{
+      left: 0;
+    }
+    main .container{
+      flex-direction: column;
+    }
+    main .container .main-img,
+    main .container .main-text{
+      width: 100%;
+      text-align: center;
+    }
+    main .container .main-text h1{
+      font-size: 4rem;
+    }
  }
